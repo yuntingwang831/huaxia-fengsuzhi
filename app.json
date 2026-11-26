@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/list",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "navigationBarTitleText": "华夏风俗志",
+    "navigationBarBackgroundColor": "#8C2F39",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F7F3EA"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

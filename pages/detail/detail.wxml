@@ -1,0 +1,94 @@
+<view class="box" wx:if="{{item}}">
+  <image wx:if="{{item.cover}}" class="cover" src="{{item.cover}}" mode="aspectFill"></image>
+  <view wx:if="{{item.coverCap}}" class="note">图：{{item.coverCap}}</view>
+
+  <view class="h1">{{item.title}}</view>
+  <view class="meta">{{item.category}} · {{item.dynasty}} · {{item.region}}</view>
+
+  <view class="h2">历史起源</view>
+  <view class="p">{{item.origin}}</view>
+  <view class="h2">主要习俗</view>
+  <view class="p" wx:for="{{item.customs}}" wx:key="*this">· {{item}}</view>
+
+  <block wx:for="{{item.sections}}" wx:for-item="s" wx:key="title">
+    <view class="h2">{{s.title}}</view>
+    <view class="p gap" wx:for="{{s.paras}}" wx:for-item="t" wx:key="*this">{{t}}</view>
+
+    <view class="tline" wx:if="{{s.timeline}}">
+      <view class="tline-item" wx:for="{{s.timeline}}" wx:for-item="tm" wx:key="time">
+        <view class="tline-dot"></view>
+        <view class="tline-time">{{tm.time}} · {{tm.title}}</view>
+        <view class="tline-text">{{tm.text}}</view>
+      </view>
+    </view>
+
+    <view class="frame" wx:for="{{s.images}}" wx:for-item="im" wx:key="src">
+      <image class="g-img" src="{{im.src}}" mode="widthFix" show-menu-by-longpress="{{true}}"></image>
+      <view class="g-cap">{{im.cap}}</view>
+      <view class="g-credit" wx:if="{{im.credit}}">{{im.credit}}</view>
+    </view>
+    <view class="note" wx:if="{{s.imgNote}}">{{s.imgNote}}</view>
+
+    <view class="q" wx:for="{{s.quotes}}" wx:for-item="q" wx:key="src">
+      <view class="corner tl"></view><view class="corner tr"></view>
+      <view class="corner bl"></view><view class="corner br"></view>
+      <view class="q-text">{{q.text}}</view>
+      <view class="q-src">—— {{q.src}}</view>
+    </view>
+
+    <view class="gloss" wx:if="{{s.gloss}}">
+      <view class="gloss-t">{{s.glossTitle || '词语小注'}}</view>
+      <view class="gloss-i" wx:for="{{s.gloss}}" wx:for-item="g" wx:key="k"><text class="gk">{{g.k}}</text>：{{g.v}}</view>
+    </view>
+
+    <block wx:if="{{s.type === 'riddles' && riddle}}">
+      <view class="riddle-wrap">
+        <view class="r-head">
+          <text>第 {{ri + 1}} / {{total}} 题</text>
+          <text>已猜中 {{score}} 题</text>
+        </view>
+
+        <block wx:if="{{!done}}">
+          <view class="r-card">
+            <view class="lantern-row"><view class="lantern"></view><view class="lantern"></view></view>
+            <view class="cols">
+              <view class="col" wx:for="{{riddle.lines}}" wx:for-item="ln" wx:key="*this">{{ln}}</view>
+            </view>
+            <view class="r-hint">—— {{riddle.hint}} ——</view>
+          </view>
+
+          <view class="r-input">
+            <input class="guess" value="{{guess}}" placeholder="写下你的谜底" confirm-type="done"
+                   bindinput="onGuess" bindconfirm="submit" disabled="{{status === 'right' || status === 'shown'}}" />
+            <view class="btn red" bindtap="submit">猜</view>
+          </view>
+
+          <view class="msg ok" wx:if="{{status === 'right'}}">猜中了！谜底是「{{riddle.answer}}」</view>
+          <view class="msg no" wx:if="{{status === 'wrong'}}">再想想看～</view>
+          <view class="msg ans" wx:if="{{status === 'shown'}}">谜底是「{{riddle.answer}}」</view>
+          <view class="r-note" wx:if="{{status === 'right' || status === 'shown'}}">
+            <view>{{riddle.note}}</view>
+            <view class="r-src">{{riddle.src}}</view>
+          </view>
+
+          <view class="r-btns">
+            <view class="btn line" bindtap="show" wx:if="{{status !== 'right' && status !== 'shown'}}">看谜底</view>
+            <view class="btn green" bindtap="next" wx:if="{{status === 'right' || status === 'shown'}}">{{ri + 1 === total ? '完成' : '下一题'}}</view>
+          </view>
+        </block>
+
+        <view class="r-done" wx:if="{{done}}">
+          <view class="r-done-t">十题已猜完，共猜中 {{score}} 题</view>
+          <view class="btn red" bindtap="restart">再来一轮</view>
+        </view>
+      </view>
+    </block>
+
+    <view class="places" wx:if="{{s.places}}">
+      <view class="place" wx:for="{{s.places}}" wx:for-item="pl" wx:key="name">
+        <view class="p-name">{{pl.name}}</view>
+        <view class="p-line">{{pl.line}}</view>
+      </view>
+    </view>
+  </block>
+</view>

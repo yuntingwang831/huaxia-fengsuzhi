@@ -1,0 +1,16 @@
+<view class="daily" wx:if="{{today}}" bindtap="goDaily">
+  <view class="daily-hd"><text class="daily-tag">今日一俗</text><text class="daily-sub">{{today.tag}}</text></view>
+  <view class="daily-title">{{today.title}}</view>
+  <view class="daily-line">{{today.line}}</view>
+</view>
+
+<view class="tabs">
+  <view wx:for="{{tabs}}" wx:key="*this" data-i="{{index}}" bindtap="onTab"
+        class="tab {{active === index ? 'on' : ''}}">{{item}}</view>
+</view>
+
+<view class="item" wx:for="{{list}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+  <view class="name">{{item.title}}</view>
+  <view class="tag">{{item.category}} · {{item.dynasty}}</view>
+  <view class="sum">{{item.summary}}</view>
+</view>

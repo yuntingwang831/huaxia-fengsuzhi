@@ -1,0 +1,22 @@
+.tabs { display: flex; padding: 24rpx 24rpx 0; }
+.tab {
+  padding: 10rpx 32rpx; margin-right: 16rpx; font-size: 28rpx;
+  color: #4F7A6B; border: 1rpx solid #4F7A6B; border-radius: 40rpx; background: #fff;
+}
+.tab.on { background: #4F7A6B; color: #fff; }
+
+.item {
+  margin: 24rpx; padding: 28rpx; background: #FFFDF8;
+  border: 1rpx solid #E3D5BC; border-left: 8rpx solid #8C2F39; border-radius: 12rpx;
+}
+.name { font-size: 34rpx; font-weight: bold; color: #3A2A22; }
+.tag { font-size: 24rpx; color: #8C2F39; margin: 8rpx 0; }
+.sum { font-size: 28rpx; color: #6B5B4E; line-height: 44rpx; }
+
+.daily { position: relative; margin: 24rpx 24rpx 0; padding: 28rpx 32rpx; background: linear-gradient(135deg, #FBF3DF, #F1E3C3); border: 2rpx solid #8C2F39; border-radius: 12rpx; }
+.daily::after { content: ''; position: absolute; top: 8rpx; right: 8rpx; bottom: 8rpx; left: 8rpx; border: 1rpx solid #C9A66B; pointer-events: none; }
+.daily-hd { display: flex; align-items: center; }
+.daily-tag { padding: 4rpx 16rpx; background: #8C2F39; color: #fff; font-size: 22rpx; border-radius: 6rpx; }
+.daily-sub { margin-left: 16rpx; font-size: 24rpx; color: #4F7A6B; }
+.daily-title { margin-top: 16rpx; font-size: 40rpx; font-weight: bold; color: #3A2A22; letter-spacing: 4rpx; }
+.daily-line { margin-top: 10rpx; font-size: 28rpx; line-height: 44rpx; color: #6B5B4E; }

@@ -1,0 +1,73 @@
+.box { padding: 40rpx; }
+.cover { width: 100%; height: 420rpx; display: block; border: 1rpx solid #C9A66B; border-radius: 12rpx; }
+.note { font-size: 22rpx; color: #9A8B7C; margin-top: 10rpx; line-height: 34rpx; }
+.h1 { font-size: 52rpx; font-weight: bold; color: #3A2A22; margin-top: 24rpx; }
+.meta { color: #8C2F39; font-size: 26rpx; margin: 12rpx 0 30rpx; }
+.h2 { font-size: 34rpx; font-weight: bold; margin: 44rpx 0 16rpx; color: #8C2F39;
+      border-left: 8rpx solid #8C2F39; padding-left: 16rpx; }
+.p { font-size: 30rpx; line-height: 52rpx; color: #4A3B30; }
+.gap { margin-bottom: 12rpx; }
+
+/* 诗文卷轴框 */
+.q { position: relative; margin: 28rpx 0; padding: 48rpx 40rpx 36rpx; background: #FFFDF8; border: 2rpx solid #8C2F39; }
+.q::before { content: ''; position: absolute; top: 10rpx; right: 10rpx; bottom: 10rpx; left: 10rpx; border: 1rpx solid #C9A66B; pointer-events: none; }
+.corner { position: absolute; width: 28rpx; height: 28rpx; border: 6rpx solid #8C2F39; }
+.tl { top: -6rpx; left: -6rpx; border-right: none; border-bottom: none; }
+.tr { top: -6rpx; right: -6rpx; border-left: none; border-bottom: none; }
+.bl { bottom: -6rpx; left: -6rpx; border-right: none; border-top: none; }
+.br { bottom: -6rpx; right: -6rpx; border-left: none; border-top: none; }
+.q-text { font-size: 30rpx; line-height: 58rpx; color: #3A2A22; letter-spacing: 2rpx; }
+.q-src { margin-top: 20rpx; text-align: right; font-size: 24rpx; color: #8C2F39; }
+
+/* 画框 */
+.frame { margin: 20rpx 0; padding: 14rpx; background: #fff; border: 1rpx solid #C9A66B; box-shadow: 0 4rpx 12rpx rgba(60, 40, 20, 0.08); }
+.g-img { width: 100%; display: block; }
+.g-cap { margin-top: 12rpx; font-size: 24rpx; color: #6B5B4E; text-align: center; letter-spacing: 2rpx; }
+.g-credit { margin-top: 6rpx; font-size: 22rpx; color: #9A8B7C; text-align: center; }
+
+/* 词语小注 */
+.gloss { margin: 24rpx 0; padding: 24rpx 28rpx; background: #F1F5F1; border-left: 6rpx solid #4F7A6B; }
+.gloss-t { font-size: 28rpx; font-weight: bold; color: #4F7A6B; }
+.gloss-i { font-size: 26rpx; line-height: 44rpx; color: #4A3B30; margin-top: 10rpx; }
+.gk { color: #8C2F39; font-weight: bold; }
+
+/* 猜灯谜 */
+.riddle-wrap { margin: 24rpx 0; }
+.r-head { display: flex; justify-content: space-between; font-size: 24rpx; color: #6B5B4E; margin-bottom: 12rpx; }
+.r-card { position: relative; padding: 24rpx 36rpx 36rpx; background: linear-gradient(180deg, #FBF3DF 0%, #F1E3C3 100%); border: 2rpx solid #8C2F39; }
+.r-card::before { content: ''; position: absolute; top: 10rpx; right: 10rpx; bottom: 10rpx; left: 10rpx; border: 1rpx solid #C9A66B; pointer-events: none; }
+.lantern-row { display: flex; justify-content: space-between; padding: 0 12rpx; height: 90rpx; }
+.lantern { position: relative; width: 44rpx; height: 58rpx; margin-top: 26rpx; background: #B3262E; border-radius: 22rpx; box-shadow: inset 0 0 0 4rpx #D9533B; }
+.lantern::before { content: ''; position: absolute; top: -26rpx; left: 50%; width: 3rpx; height: 26rpx; margin-left: -1rpx; background: #8C2F39; }
+.lantern::after { content: ''; position: absolute; bottom: -20rpx; left: 50%; width: 3rpx; height: 20rpx; margin-left: -1rpx; background: #C9A66B; }
+.cols { display: flex; flex-direction: row-reverse; justify-content: center; min-height: 380rpx; }
+.col { writing-mode: vertical-rl; font-size: 42rpx; font-weight: bold; letter-spacing: 8rpx; line-height: 1.6; margin: 0 14rpx; color: #3A2A22; }
+.r-hint { text-align: center; margin-top: 24rpx; font-size: 26rpx; color: #8C2F39; letter-spacing: 4rpx; }
+.r-input { display: flex; margin-top: 24rpx; }
+.guess { flex: 1; height: 80rpx; padding: 0 24rpx; background: #fff; border: 1rpx solid #C9A66B; border-radius: 8rpx; font-size: 30rpx; }
+.btn { padding: 0 36rpx; height: 80rpx; line-height: 80rpx; text-align: center; font-size: 28rpx; border-radius: 8rpx; }
+.red { background: #8C2F39; color: #fff; margin-left: 16rpx; }
+.green { background: #4F7A6B; color: #fff; }
+.line { border: 1rpx solid #8C2F39; color: #8C2F39; background: #fff; }
+.msg { margin-top: 20rpx; font-size: 30rpx; font-weight: bold; }
+.ok { color: #4F7A6B; }
+.no { color: #B3262E; }
+.ans { color: #8C2F39; }
+.r-note { margin-top: 12rpx; padding: 20rpx 24rpx; background: #FFFDF8; border: 1rpx solid #E3D5BC; font-size: 26rpx; line-height: 44rpx; color: #4A3B30; }
+.r-src { margin-top: 8rpx; font-size: 22rpx; color: #9A8B7C; }
+.r-btns { display: flex; justify-content: flex-end; margin-top: 20rpx; }
+.r-done { padding: 48rpx 0; text-align: center; background: #FFFDF8; border: 1rpx solid #E3D5BC; }
+.r-done-t { font-size: 32rpx; color: #8C2F39; font-weight: bold; margin-bottom: 24rpx; }
+.r-done .red { display: inline-block; margin-left: 0; }
+
+/* 应天十里 */
+.places { display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 24rpx; }
+.place { width: 48.5%; box-sizing: border-box; margin-bottom: 20rpx; padding: 20rpx 22rpx; background: #FFFDF8; border: 1rpx solid #E3D5BC; border-top: 6rpx solid #4F7A6B; border-radius: 8rpx; }
+.p-name { font-size: 30rpx; font-weight: bold; color: #4F7A6B; }
+.p-line { font-size: 24rpx; color: #6B5B4E; line-height: 40rpx; margin-top: 6rpx; }
+/* 时间线 */
+.tline { position: relative; margin: 20rpx 0 10rpx 14rpx; padding-left: 36rpx; border-left: 4rpx solid #C9A66B; }
+.tline-item { position: relative; padding-bottom: 36rpx; }
+.tline-dot { position: absolute; left: -48rpx; top: 8rpx; width: 20rpx; height: 20rpx; border-radius: 50%; background: #8C2F39; border: 4rpx solid #F7F3EA; }
+.tline-time { font-size: 30rpx; font-weight: bold; color: #8C2F39; }
+.tline-text { margin-top: 8rpx; font-size: 28rpx; line-height: 46rpx; color: #4A3B30; }

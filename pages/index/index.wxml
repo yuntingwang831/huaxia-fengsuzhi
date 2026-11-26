@@ -1,0 +1,8 @@
+<view class="cover">
+  <view class="seal">俗</view>
+  <view class="title">华夏风俗志</view>
+  <view class="subtitle">千年岁时 · 万般风物</view>
+  <view class="line"></view>
+  <view class="desc">从节日到礼仪，从衣食到住行\n翻开古人的生活画卷</view>
+  <button class="enter-btn" bindtap="goList">开 卷</button>
+</view>
